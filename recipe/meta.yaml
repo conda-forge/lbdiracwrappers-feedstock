@@ -22,11 +22,12 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
     - setuptools_scm
   run:
     - lbenv
-    - python
+    - python >=3.6
+    - packaging >=20.0
 
 test:
   imports:
