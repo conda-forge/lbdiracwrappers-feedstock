@@ -1,5 +1,5 @@
 {% set name = "lbdiracwrappers" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 
 package:
@@ -8,15 +8,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LbDiracWrappers-{{ version }}.tar.gz
-  sha256: 6e54527bcc92f789fbc8a0dd67668d1738421f449207103793288710853f1efc
+  sha256: fde4147198fde3376109e8704cc002842502cca429b9333446b0a0eb3b605211
 
 build:
   number: 0
   noarch: python
   entry_points:
-    - lb-dirac=LbDiracWrappers:lb_dirac
-    - lhcb-proxy-init=LbDiracWrappers:lhcb_proxy_init
-    - lhcb-proxy-info=LbDiracWrappers:lhcb_proxy_info
+    - lb-dirac = LbDiracWrappers:lb_dirac
+    - lhcb-proxy-init = LbDiracWrappers:lhcb_proxy_init
+    - lhcb-proxy-info = LbDiracWrappers:lhcb_proxy_info
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -39,7 +39,7 @@ test:
     - pip
 
 about:
-  home: https://gitlab.cern.ch/lhcb-core/lbdiracwrappers
+  home: https://pypi.org/project/LbDiracWrappers/
   summary: Wrappers for LHCbDirac commands
   license: GPL-3.0-or-later
   license_file: LICENSE
