@@ -1,7 +1,7 @@
 About lbdiracwrappers
 =====================
 
-Home: https://gitlab.cern.ch/lhcb-core/lbdiracwrappers
+Home: https://pypi.org/project/LbDiracWrappers/
 
 Package license: GPL-3.0-or-later
 
