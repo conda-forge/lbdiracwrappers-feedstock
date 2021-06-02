@@ -1,5 +1,5 @@
 {% set name = "lbdiracwrappers" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LbDiracWrappers-{{ version }}.tar.gz
-  sha256: fde4147198fde3376109e8704cc002842502cca429b9333446b0a0eb3b605211
+  sha256: 674fac8808410733af617c511f8cd8b6d8226811f8cd23b875560b3408fc7cf9
 
 build:
   number: 0
