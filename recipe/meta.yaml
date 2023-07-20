@@ -1,6 +1,5 @@
-{% set name = "LbDiracWrappers" %}
-{% set version = "1.2.1" %}
-
+{% set name = "lbdiracwrappers" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,25 +7,27 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LbDiracWrappers-{{ version }}.tar.gz
-  sha256: 0760a95098b577136916eb32bc823c31fefbd43161688b6299c41c61fa8f43d1
+  sha256: c4b91878439550294285eafac6c2a4ebee12e895a13becdc66b3dfb56be8d81e
 
 build:
-  number: 0
-  noarch: python
   entry_points:
     - lb-dirac = LbDiracWrappers:lb_dirac
     - lhcb-proxy-init = LbDiracWrappers:lhcb_proxy_init
     - lhcb-proxy-info = LbDiracWrappers:lhcb_proxy_info
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
+    - python >=3.9
+    - setuptools >=61.2
+    - wheel
+    - setuptools-scm >=3.4
     - pip
-    - python >=3.6
-    - setuptools_scm
   run:
+    - python >=3.9
     - lbenv
-    - python >=3.6
     - packaging >=20.0
 
 test:
