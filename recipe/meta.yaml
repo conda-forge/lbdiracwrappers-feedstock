@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/LbDiracWrappers-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/LbDiracWrappers-{{ version }}.tar.gz
   sha256: 98803ca999a7944eb39b5ccbf58d0a807cba33379b37ead6ca6b433c9ad1394d
 
 build:
@@ -16,17 +16,17 @@ build:
     - lhcb-proxy-info = LbDiracWrappers:lhcb_proxy_info
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=61.2
     - wheel
     - setuptools-scm >=3.4
     - pip
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - lbenv
     - packaging >=20.0
 
@@ -38,6 +38,7 @@ test:
     - lb-dirac --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/LbDiracWrappers/
